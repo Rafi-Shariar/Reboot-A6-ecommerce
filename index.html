@@ -33,6 +33,7 @@
   <body>
     <!-- header  -->
     <header>
+      <!-- Navbar -->
       <div class="navbar bg-base-100 lg:max-w-7xl mx-auto">
         <div class="navbar-start">
           <div class="dropdown">
@@ -67,16 +68,65 @@
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal flex gap-10 text-lg">
-            <li class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer">Home</li>
-            <li class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer">Products</li>
-            <li class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer"> About</li>
-            <li class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer">Contact</li>
+            <li
+              class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer"
+            >
+              Home
+            </li>
+            <li
+              class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer"
+            >
+              Products
+            </li>
+            <li
+              class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer"
+            >
+              About
+            </li>
+            <li
+              class="hover:underline hover:font-semibold hover:text-blue-500 hover:cursor-pointer"
+            >
+              Contact
+            </li>
           </ul>
         </div>
         <div class="navbar-end">
           <i class="fa-solid fa-cart-shopping text-xl"></i>
         </div>
       </div>
+
+      <!-- Hero section -->
+      <section>
+        <div
+          class="hero min-h-screen lg:min-h-[600px] relative overflow-hidden"
+          style="
+            background-image: url(./assets/banner-image.png);
+          "
+        >
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+
+          <div
+            class="hero-content justify-start text-neutral-content relative z-10 w-full px-10"
+          >
+            <div class="max-w-xl">
+              <h1
+                class="mb-5 text-5xl font-extrabold text-white"
+              >
+                Best Collections For You
+              </h1>
+              <p class="mb-8 text-lg text-gray-200">
+                Discover the latest trends in fashion, electronics, and more.
+                Shop with confidence & style with SwiftCart.
+              </p>
+              <button
+                class="btn btn-primary btn-md"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
 
     <!-- main section -->
