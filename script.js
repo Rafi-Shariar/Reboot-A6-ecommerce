@@ -53,6 +53,64 @@ async function loadTrendingProducts() {
 }
 loadTrendingProducts();
 
+// load Cat products
+const showProducts = async (category) => {
+  const res = await fetch(`https://fakestoreapi.com/products/category/${category}`)
+  const products = await res.json();
+
+  const container = document.getElementById("products-container");
+  container.innerHTML = "";
+
+  document.getElementById('tagH1').innerHTML = "";
+
+  products.forEach((product) => {
+    const card = document.createElement("div");
+    card.className = "h-full mt-16";
+
+    card.innerHTML = `
+         <div class="card bg-base-100 shadow-lg flex flex-col">
+            <figure class="border-b-2 border-b-blue-100 py-4 shrink-0 bg-white">
+              <img src="${product.image}" class="object-contain h-48 w-full" />
+            </figure>
+            
+            <div class="card-body flex flex-col p-5 bg-blue-50">
+              <h2 class="card-title text-xl">
+                ${product.title.slice(0,20)} ...
+              </h2>
+
+               <div>
+                    <h1 class="text-lg font-semibold bg-blue-700 p-2 rounded-lg text-white"> Price: ${product.price} $</h1>
+                </div>
+              
+              <div class="card-actions justify-between items-center mt-auto pt-4 ">
+                <div>
+                <div class="badge badge-outline mr-4">
+                    <i class="fa-solid fa-layer-group text-green-600"></i> ${product.category}
+                </div>
+                <div class="badge badge-outline">
+                    <i class="fa-solid fa-star text-orange-400"></i> ${product.rating.rate}
+                </div>
+                </div>
+
+               
+              </div>
+
+              <div class="flex justify-between gap-3">
+                 <button class="btn btn-outline btn-primary w-1/2">Details</button>
+                 <button class="btn btn-outline btn-success w-1/2">Add to Cart</button>
+              </div>
+
+            </div>
+          </div>
+        `;
+    container.appendChild(card);
+  });
+
+
+  
+}
+
+
 //Loading Cat Buttons
 async function LoadCatButtons() {
 
@@ -66,14 +124,13 @@ async function LoadCatButtons() {
   allCats.forEach((cat,index)=>{
     const button = document.createElement("div")
     button.innerHTML = `
-     <button class="btn btn-soft btn-success">${cat}</button>
+     <button onclick="showProducts(\`${cat}\`)" class="btn btn-soft btn-success">${cat}</button>
     `;
 
     container.appendChild(button)
 
   })
-  
-  
+    
 }
-
 LoadCatButtons();
+
