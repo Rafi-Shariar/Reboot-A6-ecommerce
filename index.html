@@ -244,31 +244,39 @@
       </section>
 
       <!-- Category -->
-       <section>
+      <section>
         <div>
-           <div class="text-center mt-16">
-          <h1 class="text-2xl lg:text-4xl font-semibold">Explore All Categories</h1>
-          <p class="text-gray-500 mt-3">
-            Shop by Categories & find your desired item.
-          </p>
+          <div class="text-center mt-16">
+            <h1 class="text-2xl lg:text-4xl font-semibold">
+              Explore All Categories
+            </h1>
+            <p class="text-gray-500 mt-3">
+              Shop by Categories & find your desired item.
+            </p>
           </div>
 
           <!-- Category Buttons -->
-           <div id="Cat-Buttons" class="max-w-4xl mx-auto grid grid-cols-2 justify-items-center gap-4 lg:flex lg:justify-around items-center mt-6">
-             
-           </div>
+          <div
+            id="Cat-Buttons"
+            class="max-w-4xl mx-auto grid grid-cols-2 justify-items-center gap-4 lg:flex lg:justify-around items-center mt-6"
+          ></div>
 
-           <!-- Products -->
-          
-           <div id="products-container" class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-           </div>
-           
-           <div id="tagH1">
-            <h1  class="text-xl text-center bg-gradient-to-r from-cyan-100 to-blue-200 py-3 mt-6 font-semibold text-blue-600 rounded-4xl">Select a Category <i class="fa-solid fa-arrow-up"></i></h1>
-           </div>
+          <!-- Products -->
 
+          <div
+            id="products-container"
+            class="grid grid-cols-1 lg:grid-cols-4 gap-6"
+          ></div>
+
+          <div id="tagH1">
+            <h1
+              class="text-xl text-center bg-gradient-to-r from-cyan-100 to-blue-200 py-3 mt-6 font-semibold text-blue-600 rounded-4xl"
+            >
+              Select a Category <i class="fa-solid fa-arrow-up"></i>
+            </h1>
+          </div>
         </div>
-       </section>
+      </section>
 
       <!-- Newsletter section -->
       <section>
@@ -384,11 +392,25 @@
         </nav>
         <aside>
           <p class="text-slate-300">
-            Copyright ©  All right reserved by SwiftCart Ltd
+            Copyright © All right reserved by SwiftCart Ltd
           </p>
         </aside>
       </footer>
     </footer>
+
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <div id="Modaldetails">
+
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn w-full">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

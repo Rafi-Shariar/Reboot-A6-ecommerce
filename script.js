@@ -96,7 +96,7 @@ const showProducts = async (category) => {
               </div>
 
               <div class="flex justify-between gap-3">
-                 <button class="btn btn-outline btn-primary w-1/2">Details</button>
+                 <button onclick="showDetails(${product.id})" class="btn btn-outline btn-primary w-1/2">Details</button>
                  <button class="btn btn-outline btn-success w-1/2">Add to Cart</button>
               </div>
 
@@ -106,10 +106,35 @@ const showProducts = async (category) => {
     container.appendChild(card);
   });
 
-
   
 }
 
+async function showDetails(id){
+  
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`)
+  const details = await res.json();
+
+  const a = document.getElementById("my_modal_1");
+  const container = document.getElementById("Modaldetails");
+  container.innerHTML = `
+
+      <h1 class="text-2xl font-semibold">${details.title}</h1>
+      <h1 class="mt-3 text-lg font-semibold text-gray-500">Description</h1>
+      <p class="mt-3 text-base text-gray-500">${details.description}</p>
+
+       <div class="flex justify-between mt-3 gap-3">
+          <h1 class="lg:text-lg font-semibold bg-blue-300 p-2 rounded-lg text-white w-[150px]"> Price: ${details.price} $</h1>
+          
+        <h1 class=" lg:text-lg font-semibold bg-orange-300 p-2 rounded-lg text-white w-[150px]"> Rating: ${details.rating.rate}  </h1>
+        <button class="btn btn-info">Buy Now</button>
+        </div>
+  
+  `
+
+  a.showModal()
+  
+  
+}
 
 //Loading Cat Buttons
 async function LoadCatButtons() {
