@@ -1,3 +1,4 @@
+//Loading Trending Products
 async function loadTrendingProducts() {
   const res = await fetch("https://fakestoreapi.com/products");
   const allProducts = await res.json();
@@ -50,5 +51,29 @@ async function loadTrendingProducts() {
     container.appendChild(card);
   });
 }
-
 loadTrendingProducts();
+
+//Loading Cat Buttons
+async function LoadCatButtons() {
+
+  const res = await fetch("https://fakestoreapi.com/products/categories");
+  const allCats = await res.json();
+
+  // console.log(allCats);
+
+  const container = document.getElementById("Cat-Buttons");
+
+  allCats.forEach((cat,index)=>{
+    const button = document.createElement("div")
+    button.innerHTML = `
+     <button class="btn btn-soft btn-success">${cat}</button>
+    `;
+
+    container.appendChild(button)
+
+  })
+  
+  
+}
+
+LoadCatButtons();
